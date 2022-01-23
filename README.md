@@ -4,7 +4,7 @@ The promotion engine is used during the checkout process to calculate the total 
 
 ### Architecture Specification
   #### Functional Overview
-  The promotion engine is used during the checkout process to calculate the total order after applying the promotions types to the SKUs. The promotion engine allows to add more promotion types in later date
+  The promotion engine is used during the checkout process to calculate the total order after applying the promotions types to the SKUs. The promotion engine allows to add more  promotion types in later date.
   
   #### Architecture context
   
@@ -24,5 +24,8 @@ The promotion engine is used during the checkout process to calculate the total 
 * Build the solution.
 
  ### Technology Stack 
-* .Net Core 3.1
-* Used Xunit for unit test
+* .Net Core 3.1.
+* Used Xunit for unit test.
+
+### Running and Testing
+* Use Sales.Client console for running and testing promotion engine.
