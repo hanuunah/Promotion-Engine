@@ -1,5 +1,6 @@
 ﻿using Promotion.Engine.Domain.Models;
-using System.Collections.Generic;
+using Promotion.Engine.UnitTests.TestData;
+using System;
 
 namespace Sales.Client
 {
@@ -7,33 +8,25 @@ namespace Sales.Client
     {
         static void Main(string[] args)
         {
-            var order = GetOrder();
-
             var promoEngine = new PromotionEngine(new PromotionProvider());
-            promoEngine.CalculateTotal(order);
+
+            var orderA = PromotionDataGenerator.GetScenarioAOrder();
+            promoEngine.CalculateTotal(orderA);
+            Console.WriteLine($"Scenario A, Total {orderA.Total}");
+
+
+            var orderB = PromotionDataGenerator.GetScenarioBOrder();
+            promoEngine.CalculateTotal(orderB);
+            Console.WriteLine($"Scenario B, Total {orderB.Total}");
+
+
+            var orderC = PromotionDataGenerator.GetScenarioCOrder();
+            promoEngine.CalculateTotal(orderC);
+            Console.WriteLine($"Scenario C, Total {orderC.Total}");
+
+            Console.ReadLine();
         }
 
-        private static Order GetOrder()
-        {
-            var promoTypes = new List<PromotionType>
-            {
-                PromotionType.Type1,
-                PromotionType.Type2,
-                PromotionType.Type3,
-            };
 
-            var skuA = new Sku("A", 50);
-            var skuB = new Sku("B", 30);
-            var skuC = new Sku("C", 20);
-            var itemA = new OrderItem(1, skuA, 5);
-            var itemB = new OrderItem(2, skuB, 5);
-            var itemC = new OrderItem(3, skuC, 1);
-            var order = new Order(1, promoTypes);
-
-            order.AddItem(itemA);
-            order.AddItem(itemB);
-            order.AddItem(itemC);
-            return order;
-        }
     }
 }

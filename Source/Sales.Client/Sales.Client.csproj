@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Promotion.Engine.UnitTests\Promotion.Engine.UnitTests.csproj" />
     <ProjectReference Include="..\Promotion.Engine\Promotion.Engine.csproj" />
   </ItemGroup>
 

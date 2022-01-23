@@ -26,7 +26,7 @@ namespace Promotion.Engine.UnitTests.TestData
 
         private static void PrepareScenarioB(List<object[]> data)
         {
-            var order2 = PromotionDataGenerator.GetScnearioBOrder();
+            var order2 = PromotionDataGenerator.GetScenarioBOrder();
 
             data.Add(new object[] { order2, 370 });
         }

@@ -47,7 +47,7 @@ namespace Promotion.Engine.UnitTests.TestData
             return order3;
         }
 
-        public static Order GetScnearioBOrder()
+        public static Order GetScenarioBOrder()
         {
             var order2 = new Order(1, _promoTypes);
             var itemA2 = new OrderItem(1, _skuA, 5);
