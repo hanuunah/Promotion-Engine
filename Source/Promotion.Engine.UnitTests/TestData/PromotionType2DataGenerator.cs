@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Promotion.Engine.UnitTests.TestData
 {
-    public class PromotionType2DataGenerator : IEnumerable<object[]>
+    public class PromotionType1DataGenerator : IEnumerable<object[]>
     {
 
         public IEnumerator<object[]> GetEnumerator()
@@ -22,21 +22,21 @@ namespace Promotion.Engine.UnitTests.TestData
         private static void PrepareScenarioC(List<object[]> data)
         {
             var order3 = PromotionDataGenerator.GetScenarioCOrder();
-            data.Add(new object[] { order3, 30 });
+            data.Add(new object[] { order3, 130 });
         }
 
         private static void PrepareScenarioB(List<object[]> data)
         {
             var order2 = PromotionDataGenerator.GetScnearioBOrder();
 
-            data.Add(new object[] { order2, 120 });
+            data.Add(new object[] { order2, 230 });
         }
 
         private static void PrepareScenarioA(List<object[]> data)
         {
             Order order = PromotionDataGenerator.GetScenarioAOrder();
 
-            data.Add(new object[] { order, 120 });
+            data.Add(new object[] { order, 50 });
         }
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
