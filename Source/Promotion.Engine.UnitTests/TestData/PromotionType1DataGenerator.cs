@@ -17,12 +17,13 @@ namespace Promotion.Engine.UnitTests.TestData
         public IEnumerator<object[]> GetEnumerator()
         {
             var data = new List<object[]>();
+
             var skuA = new Sku("A", 50);
             var skuB = new Sku("B", 30);
             var skuC = new Sku("C", 20);
             //Scenario A
             var order = new Order(1, promoTypes);
-           
+
 
             var itemA = new OrderItem(1, skuA, 1);
             var itemB = new OrderItem(2, skuB, 1);
@@ -32,11 +33,11 @@ namespace Promotion.Engine.UnitTests.TestData
             order.AddItem(itemB);
             order.AddItem(itemC);
 
-            data.Add(new object[] { order, 100 });
+            data.Add(new object[] { order, 50 });
 
             //Scenario B
             var order2 = new Order(1, promoTypes);
-           
+
 
             var itemA2 = new OrderItem(1, skuA, 5);
             var itemB2 = new OrderItem(2, skuB, 5);
@@ -46,7 +47,7 @@ namespace Promotion.Engine.UnitTests.TestData
             order2.AddItem(itemB2);
             order2.AddItem(itemC2);
 
-            data.Add(new object[] { order2, 370 });
+            data.Add(new object[] { order2, 230 });
             //Scenario C
             var order3 = new Order(1, promoTypes);
             var itemA3 = new OrderItem(1, skuA, 3);
@@ -58,7 +59,7 @@ namespace Promotion.Engine.UnitTests.TestData
             order3.AddItem(itemB3);
             order3.AddItem(itemC3);
             order3.AddItem(itemD3);
-            data.Add(new object[] { order3, 280 });
+            data.Add(new object[] { order3, 130 });
 
             return data.GetEnumerator();
         }
