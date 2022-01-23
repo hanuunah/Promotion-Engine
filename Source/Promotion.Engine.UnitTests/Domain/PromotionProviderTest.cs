@@ -16,7 +16,7 @@ namespace Promotion.Engine.UnitTests.Domain
         }
 
         [Theory]
-        [ClassData(typeof(TestDataGenerator))]
+        [ClassData(typeof(PromotionTypeDataGenerator))]
         public void GetPromotion_ValidPromotionType_ReturnPromotionType(PromotionType promotionType)
         {
             var promotion = _target.GetPromotion(promotionType);
