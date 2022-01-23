@@ -22,6 +22,7 @@ The promotion engine is used during the checkout process to calculate the total 
 * Install or update Asp dotnet core sdk to latest.
 * Clone the repository.
 * Build the solution.
-* 
+
  ### Technology Stack 
 * .Net Core 3.1
+* Used Xunit for unit test
