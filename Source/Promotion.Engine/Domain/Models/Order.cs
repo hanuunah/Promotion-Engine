@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using PromotionEngine.Domain.Interfaces;
+using System.Collections.Generic;
 
 namespace PromotionEngine.Domain.Models
 {
-    public class Order
+    public class Order : IOrder
     {
         public Order(int id, List<PromotionType> promotionTypes)
         {
@@ -21,7 +22,17 @@ namespace PromotionEngine.Domain.Models
 
         public void AddItem(OrderItem item)
         {
-            throw new System.NotImplementedException();
+            if (!IsValid(item))
+            {
+                return;
+            }
+
+            Items.Add(item);
+        }
+
+        private static bool IsValid(OrderItem item)
+        {
+            return item != null;
         }
     }
 }
