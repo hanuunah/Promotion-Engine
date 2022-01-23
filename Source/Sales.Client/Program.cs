@@ -7,6 +7,14 @@ namespace Sales.Client
     {
         static void Main(string[] args)
         {
+            var order = GetOrder();
+
+            var promoEngine = new PromotionEngine(new PromotionProvider());
+            promoEngine.CalculateTotal(order);
+        }
+
+        private static Order GetOrder()
+        {
             var promoTypes = new List<PromotionType>
             {
                 PromotionType.Type1,
@@ -25,9 +33,7 @@ namespace Sales.Client
             order.AddItem(itemA);
             order.AddItem(itemB);
             order.AddItem(itemC);
-
-            var promoEngine = new PromotionEngine(new PromotionProvider());
-            promoEngine.CalculateTotal(order);
+            return order;
         }
     }
 }
