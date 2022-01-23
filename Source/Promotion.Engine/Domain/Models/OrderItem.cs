@@ -13,5 +13,6 @@
         public Sku Sku { get; }
         public int Quantity { get; }
         public double Price { get; set; }
+        public bool IsPromotionAplied { get; set; }
     }
 }

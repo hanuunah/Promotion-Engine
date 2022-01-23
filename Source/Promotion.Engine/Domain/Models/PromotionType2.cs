@@ -13,14 +13,13 @@ namespace Promotion.Engine.Domain.Models
         {
             if (!IsPromoApplicable(order))
             {
-                CalculateItemPrice(order);
                 return;
             }
 
-            CalculateItemPriceAfterDiscount(order);
+            CalculateItemPrice(order);
         }
 
-        private static void CalculateItemPriceAfterDiscount(Order order)
+        private static void CalculateItemPrice(Order order)
         {
             var item = order.Items.First(x => x.Sku.Id.Equals(SkuType.B.Value));
             int discountCount = item.Quantity / ItemCountForDiscount;
@@ -28,14 +27,7 @@ namespace Promotion.Engine.Domain.Models
             var nonDicountItemCount = item.Quantity - discountItemCount;
             item.Price += discountCount * DiscountPrice;
             item.Price += nonDicountItemCount * item.Sku.Price;
-            order.Total += item.Price;
-        }
-
-        private static void CalculateItemPrice(Order order)
-        {
-            var item = order.Items.First(x => x.Sku.Id.Equals(SkuType.B.Value));
-            item.Price = item.Sku.Price * item.Quantity;
-            order.Total += item.Price;
+            item.IsPromotionAplied = true;
         }
 
         private static bool IsPromoApplicable(Order order)

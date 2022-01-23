@@ -5,6 +5,13 @@ namespace Promotion.Engine.Domain.Models
 {
     public class PromotionEngine : IPromotionEngine
     {
+        private readonly IPromotionProvider _promotionProvider;
+
+        public PromotionEngine(IPromotionProvider promotionProvider)
+        {
+            _promotionProvider = promotionProvider;
+        }
+
         public void CalculateTotal(Order order)
         {
             if (!IsValid(order))
@@ -12,12 +19,14 @@ namespace Promotion.Engine.Domain.Models
                 return;
             }
 
-            var promotionProvider = new PromotionProvider();
             foreach (var type in order.PromotionTypes)
             {
-                var promotion = promotionProvider.GetPromotion(type);
+                var promotion = _promotionProvider.GetPromotion(type);
+                //polymorphism magic
                 promotion.Apply(order);
             }
+
+            order.CalculateTotal();
         }
 
         private static bool IsValid(Order order)

@@ -37,14 +37,14 @@ namespace Promotion.Engine.UnitTests.TestData
         {
             var order2 = PromotionDataGenerator.GetScnearioBOrder();
 
-            data.Add(new object[] { order2, 20 });
+            data.Add(new object[] { order2, 0 });
         }
 
         private static void PrepareScenarioA(List<object[]> data)
         {
             Order order = PromotionDataGenerator.GetScenarioAOrder();
 
-            data.Add(new object[] { order, 20 });
+            data.Add(new object[] { order, 0 });
         }
 
     }

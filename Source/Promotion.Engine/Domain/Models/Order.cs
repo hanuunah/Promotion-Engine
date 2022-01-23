@@ -1,5 +1,6 @@
 ﻿using Promotion.Engine.Domain.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Promotion.Engine.Domain.Models
 {
@@ -33,6 +34,19 @@ namespace Promotion.Engine.Domain.Models
         private static bool IsValid(OrderItem item)
         {
             return item != null;
+        }
+
+        public void CalculateTotal()
+        {
+            foreach (var item in Items.Where(x => !x.IsPromotionAplied))
+            {
+                item.Price = item.Sku.Price * item.Quantity;
+            }
+
+            foreach (var item in Items)
+            {
+                Total += item.Price;
+            }
         }
     }
 }

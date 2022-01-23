@@ -11,9 +11,9 @@ namespace Promotion.Engine.UnitTests.Domain
         private readonly IPromotionEngine _target;
         public PromotionEngineTest()
         {
-          
-
-            _target = new PromotionEngine();
+            // Ideally promotionProvider should be mocked using Moq, due time constraint, would use this test as integration test
+            var promotionProvider = new PromotionProvider();
+            _target = new PromotionEngine(promotionProvider);
         }
 
         [Theory]
