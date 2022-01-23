@@ -15,6 +15,7 @@ namespace Promotion.Engine.UnitTests.TestData
         private static readonly Sku _skuA = new Sku("A", 50);
         private static readonly Sku _skuB = new Sku("B", 30);
         private static readonly Sku _skuC = new Sku("C", 20);
+        private static readonly Sku _skuD = new Sku("D", 30);
 
         public static Order GetScenarioAOrder()
         {
@@ -37,7 +38,7 @@ namespace Promotion.Engine.UnitTests.TestData
             var itemA3 = new OrderItem(1, _skuA, 3);
             var itemB3 = new OrderItem(2, _skuB, 5);
             var itemC3 = new OrderItem(3, _skuC, 1);
-            var itemD3 = new OrderItem(4, _skuC, 1);
+            var itemD3 = new OrderItem(4, _skuD, 1);
 
             order3.AddItem(itemA3);
             order3.AddItem(itemB3);

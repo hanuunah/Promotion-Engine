@@ -31,7 +31,7 @@ namespace Promotion.Engine.UnitTests.TestData
         private static void PrepareScenarioC(List<object[]> data)
         {
             var order3 = PromotionDataGenerator.GetScenarioCOrder();
-            data.Add(new object[] { order3, 20 });
+            data.Add(new object[] { order3, 0, 30 });
         }
 
         private static void PrepareScenarioB(List<object[]> data)
@@ -45,7 +45,7 @@ namespace Promotion.Engine.UnitTests.TestData
         {
             Order order = PromotionDataGenerator.GetScenarioAOrder();
 
-            data.Add(new object[] { order, 0, 30 });
+            data.Add(new object[] { order, 20 });
         }
 
     }
