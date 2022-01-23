@@ -27,7 +27,7 @@ namespace Promotion.Engine.Domain.Models
 
         private static void CalculateItemCPrice(Order order)
         {
-            if(!order.Items.Any(x => x.Sku.Id.Equals(SkuType.C.Value)))
+            if (!order.Items.Any(x => x.Sku.Id.Equals(SkuType.C.Value)))
             {
                 return;
             }
@@ -55,22 +55,24 @@ namespace Promotion.Engine.Domain.Models
             var itemD = order.Items.First(x => x.Sku.Id.Equals(SkuType.D.Value));
             var discountItemCount = Math.Min(itemC.Quantity, itemD.Quantity);
 
-            CalculateItemCPriceAfterDiscount(itemC, discountItemCount);
-            CalculateItemDPriceAfterDiscount(itemD, discountItemCount);
+            CalculateItemCPriceAfterDiscount(order, itemC, discountItemCount);
+            CalculateItemDPriceAfterDiscount(order, itemD, discountItemCount);
 
         }
 
-        private static void CalculateItemCPriceAfterDiscount(OrderItem item, int discountItemCount)
+        private static void CalculateItemCPriceAfterDiscount(Order order, OrderItem item, int discountItemCount)
         {
             var nonDicountItemCount = item.Quantity - discountItemCount;
             item.Price = nonDicountItemCount * item.Sku.Price;
+            order.Total += item.Price;
         }
 
-        private static void CalculateItemDPriceAfterDiscount(OrderItem item, int discountItemCount)
+        private static void CalculateItemDPriceAfterDiscount(Order order, OrderItem item, int discountItemCount)
         {
             var nonDicountItemCount = item.Quantity - discountItemCount;
             item.Price += discountItemCount * DiscountPrice;
             item.Price += nonDicountItemCount * item.Sku.Price;
+            order.Total += item.Price;
         }
 
         private static bool IsPromoApplicable(Order order)

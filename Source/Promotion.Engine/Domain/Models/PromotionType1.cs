@@ -34,7 +34,7 @@ namespace Promotion.Engine.Domain.Models
             var item = order.Items.First(x => x.Sku.Id.Equals(SkuType.A.Value));
             item.Price = item.Sku.Price * item.Quantity;
             order.Total += item.Price;
-        }      
+        }
 
 
         private static bool IsPromoApplicable(Order order)
