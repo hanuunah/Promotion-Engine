@@ -14,7 +14,7 @@ The promotion engine is used during the checkout process to calculate the total 
 
   #### Design description
   
-  ![image](https://user-images.githubusercontent.com/13185803/150668856-0a8b7ea5-09b8-44c1-a862-617059e0ffb4.png)
+  ![image](https://user-images.githubusercontent.com/13185803/150680352-0a85eecb-6593-42c9-8be7-6eea84bf6478.png)
   
   
  ### Project setup
