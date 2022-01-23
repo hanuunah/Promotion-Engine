@@ -40,5 +40,68 @@ namespace Promotion.Engine.UnitTests.Domain
             Check.That(_target.Items).HasSize(0);
         }
 
+        [Fact]
+        public void CalculateTotal_ValidPromotionAppliedItems_CalcullateTotal()
+        {
+            var skuA = new Sku("A", 50);
+            var itemA = new OrderItem(1, skuA, 5)
+            {
+                IsPromotionAplied = true
+            };
+
+            var skuB = new Sku("B", 30);
+            var itemB = new OrderItem(1, skuB, 5)
+            {
+                IsPromotionAplied = true
+            };
+
+            _target.AddItem(itemA);
+            _target.AddItem(itemB);
+
+            _target.CalculateTotal();
+
+            Check.That(_target.Total).Equals(0);
+        }
+
+
+        [Fact]
+        public void CalculateTotal_ValidNotApplicablePromoItems_CalcullateTotal()
+        {
+            var skuA = new Sku("A", 50);
+            var itemA = new OrderItem(1, skuA, 5);
+           
+
+            var skuB = new Sku("B", 30);
+            var itemB = new OrderItem(1, skuB, 5);
+
+            _target.AddItem(itemA);
+            _target.AddItem(itemB);
+
+            _target.CalculateTotal();
+
+            Check.That(_target.Total).Equals(400);
+        }
+
+        [Fact]
+        public void CalculateTotal_ValidPromoAndNonPromoItems_CalcullateTotal()
+        {
+            var skuA = new Sku("A", 50);
+            var itemA = new OrderItem(1, skuA, 5)
+            {
+                IsPromotionAplied = true
+            };
+
+
+            var skuB = new Sku("B", 30);
+            var itemB = new OrderItem(1, skuB, 5);
+
+            _target.AddItem(itemA);
+            _target.AddItem(itemB);
+
+            _target.CalculateTotal();
+
+            Check.That(_target.Total).Equals(150);
+        }
+
     }
 }

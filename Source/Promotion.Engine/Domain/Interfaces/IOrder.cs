@@ -11,5 +11,6 @@ namespace Promotion.Engine.Domain.Interfaces
         double Total { get; set; }
 
         void AddItem(OrderItem item);
+        void CalculateTotal();
     }
 }
