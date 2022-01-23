@@ -21,7 +21,7 @@ namespace Promotion.Engine.UnitTests.Domain
         public void Apply_ValidOrder_ApplyPromotionType1Discount(Order order, double expected)
         {
             _target.Apply(order);
-            Check.That(order.Items.First(x => x.Sku.Id.Equals(SkuType.A.Value)).Price).Equals(expected);
+            Check.That(order.Items.First(x => x.Sku.Id.Equals(SkuType.B.Value)).Price).Equals(expected);
         }
 
     }

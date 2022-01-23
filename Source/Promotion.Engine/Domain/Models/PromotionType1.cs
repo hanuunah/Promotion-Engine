@@ -16,10 +16,10 @@ namespace PromotionEngine.Domain.Models
                 return;
             }
 
-            CalculateItemPriceAfterDescount(order);
+            CalculateItemPriceAfterDiscount(order);
         }
 
-        private static void CalculateItemPriceAfterDescount(Order order)
+        private static void CalculateItemPriceAfterDiscount(Order order)
         {
             var item = order.Items.First(x => x.Sku.Id.Equals(SkuType.A.Value));
             int discountCount = item.Quantity / ItemCountForDiscount;
