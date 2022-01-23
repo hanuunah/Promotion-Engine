@@ -17,7 +17,7 @@ namespace Promotion.Engine.UnitTests.Domain
         }
 
         [Theory]
-        [ClassData(typeof(PromotionType1DataGenerator))]
+        [MemberData(nameof(PromotionType1DataGenerator.GetData), MemberType = typeof(PromotionType1DataGenerator))]
         public void Apply_ValidOrder_ApplyPromotionType1Discount(Order order, double expected)
         {
             _target.Apply(order);

@@ -17,8 +17,8 @@ namespace Promotion.Engine.UnitTests.Domain
         }
 
         [Theory]
-        [ClassData(typeof(PromotionType2DataGenerator))]
-        public void Apply_ValidOrder_ApplyPromotionType1Discount(Order order, double expected)
+        [MemberData(nameof(PromotionType2DataGenerator.GetData), MemberType = typeof(PromotionType2DataGenerator))]
+        public void Apply_ValidOrder_ApplyPromotionType2Discount(Order order, double expected)
         {
             _target.Apply(order);
             Check.That(order.Items.First(x => x.Sku.Id.Equals(SkuType.B.Value)).Price).Equals(expected);

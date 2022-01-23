@@ -1,13 +1,12 @@
 ﻿using PromotionEngine.Domain.Models;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Promotion.Engine.UnitTests.TestData
 {
-    public class PromotionType2DataGenerator : IEnumerable<object[]>
+    public class PromotionType2DataGenerator 
     {
 
-        public IEnumerator<object[]> GetEnumerator()
+        public static IEnumerable<object[]> GetData()
         {
             var data = new List<object[]>();
 
@@ -16,7 +15,7 @@ namespace Promotion.Engine.UnitTests.TestData
             PrepareScenarioB(data);
             PrepareScenarioC(data);
 
-            return data.GetEnumerator();
+            return data;
         }
 
         private static void PrepareScenarioC(List<object[]> data)
@@ -39,7 +38,6 @@ namespace Promotion.Engine.UnitTests.TestData
             data.Add(new object[] { order, 30 });
         }
 
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
     }
 }
