@@ -1,6 +1,6 @@
-﻿using PromotionEngine.Domain.Interfaces;
+﻿using Promotion.Engine.Domain.Interfaces;
 
-namespace PromotionEngine.Domain.Models
+namespace Promotion.Engine.Domain.Models
 {
     public class PromotionProvider : IPromotionProvider
     {

@@ -1,7 +1,7 @@
 ﻿using NFluent;
 using Promotion.Engine.UnitTests.TestData;
-using PromotionEngine.Domain.Interfaces;
-using PromotionEngine.Domain.Models;
+using Promotion.Engine.Domain.Interfaces;
+using Promotion.Engine.Domain.Models;
 using Xunit;
 using System.Linq;
 

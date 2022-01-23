@@ -1,4 +1,4 @@
-﻿using PromotionEngine.Domain.Models;
+﻿using Promotion.Engine.Domain.Models;
 using System.Collections;
 using System.Collections.Generic;
 

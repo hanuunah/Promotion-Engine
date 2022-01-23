@@ -1,7 +1,7 @@
-﻿using PromotionEngine.Domain.Models;
+﻿using Promotion.Engine.Domain.Models;
 using System.Collections.Generic;
 
-namespace PromotionEngine.Domain.Interfaces
+namespace Promotion.Engine.Domain.Interfaces
 {
     public interface IOrder
     {

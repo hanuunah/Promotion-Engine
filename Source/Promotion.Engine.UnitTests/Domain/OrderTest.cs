@@ -1,6 +1,6 @@
 ﻿using NFluent;
-using PromotionEngine.Domain.Interfaces;
-using PromotionEngine.Domain.Models;
+using Promotion.Engine.Domain.Interfaces;
+using Promotion.Engine.Domain.Models;
 using System.Collections.Generic;
 using Xunit;
 

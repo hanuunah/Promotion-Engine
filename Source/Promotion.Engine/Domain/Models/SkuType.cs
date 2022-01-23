@@ -1,4 +1,4 @@
-﻿namespace PromotionEngine.Domain.Models
+﻿namespace Promotion.Engine.Domain.Models
 {
     public class SkuType
     {

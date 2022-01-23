@@ -1,7 +1,7 @@
-﻿using PromotionEngine.Domain.Interfaces;
+﻿using Promotion.Engine.Domain.Interfaces;
 using System.Linq;
 
-namespace PromotionEngine.Domain.Models
+namespace Promotion.Engine.Domain.Models
 {
     public class PromotionType1 : IPromotion
     {
