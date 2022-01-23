@@ -1,10 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+
+using Xunit;
 
 namespace Promotion.Engine.UnitTests.Domain
 {
-    class OrderTest
+    public class OrderTest
     {
+
+        public OrderTest()
+        {
+            
+        }
+
+        [Fact]
+        public void AddItem_ValidItem_AddItemToOrder()
+        {
+          
+        }
+
+        [Fact]
+        public void AddItem_InvalidValidItem_ExceptionThrown()
+        {
+
+        }
+
     }
 }
